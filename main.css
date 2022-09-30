@@ -1,7 +1,13 @@
 /* IMPORTS */
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500&display=swap");
-
+:root {
+  --white: #eeeeee;
+  --lightwhite: #ffffff;
+  --gray: #c2c2c2;
+  --darkgray: #353535;
+  --lightblack: #dddddd;
+}
 /* RESET CODES */
 * {
   box-sizing: border-box;

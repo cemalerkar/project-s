@@ -61,7 +61,7 @@ function darkLightClick() {
     theme.classList.remove("fa-moon");
     theme.classList.add("fa-sun");
     location.reload();
-  } else if (localStorage.getItem("darkmode") == "on") {
+  } else {
     localStorage.setItem("darkmode", "off");
     theme.classList.add("fa-moon");
     theme.classList.remove("fa-sun");

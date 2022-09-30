@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <title>Project-S</title>
+</head>
+
+<body onload="darkmodeChange()">
+    <script type="module" src="firebase.js"></script>
+    <header>
+        <div class="navbar" id="navbar">
+            <div class="navbar-left">
+                <h1 onclick="logoClick()" id="navbar-left">Project-S</h1>
+            </div>
+            <div class="navbar-right" id="navbar-right">
+                <ul>
+                    <li><a href="#" id="navbar-name" style="display: none;">Name</a></li>
+                    <li><a href="#" id="navbar-logout" style="display: none;">Logout</a></li>
+                    <li><a href="#" id="navbar-login" onclick="loginClick()">Login</a></li>
+                    <li><a href="#" id="navbar-register" onclick="registerClick()">Register</a></li>
+                    <li>
+                        <div class="toggle" id="themeColor">
+                            <i class="far fa-moon" id="theme" onclick="darkLightClick()"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container" id="container">
+        <div class="container-bg" id="con-bg">
+            <div class="container-left" id="login-ct">
+                <h2>Login</h2>
+                <p class="with" id="w">with</p>
+                <div class="login-area">
+                    <div class="login-with" id="login-with">
+                        <a id="log-goog"><i class="fa-brands fa-google"></i></a>
+                        <a id="log-face"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a id="log-twit"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                    <div class="hr">
+                        <hr>
+                        <p>or</p>
+                        <hr>
+                    </div>
+                    <div class="login-manual">
+                        <div class="login-mail">
+                            <label for="login-mail">E-Mail</label>
+                            <input type="email" name="login-mail" id="login-mail" placeholder="Enter your mail">
+                        </div>
+                        <div class="login-password">
+                            <label for="login-pass">Password</label>
+                            <input type="password" name="login-pass" id="login-pass" placeholder="Enter your password">
+                        </div>
+                        <button id="login-btn">Login</button>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-hr" style="display:none ;" id="vert-hr">
+                <hr>
+            </div>
+            <div class="container-right" id="register-ct" style="display:none;">
+                <h2>Register</h2>
+                <p class="with">with</p>
+                <div class="register-area">
+                    <div class="register-with">
+                        <a id="reg-goog"><i class="fa-brands fa-google"></i></a>
+                        <a id="reg-face"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a id="reg-twit"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                    <div class="hr">
+                        <hr>
+                        <p>or</p>
+                        <hr>
+                    </div>
+                    <div class="register-manual">
+                        <div class="register-mail">
+                            <label for="register-mail">E-Mail</label>
+                            <input type="email" name="register-mail" id="register-mail" placeholder="Enter your mail">
+                        </div>
+                        <div class="login-password">
+                            <label for="login-pass">Password</label>
+                            <input type="password" name="register-pass" id="register-pass"
+                                placeholder="Enter your password">
+                        </div>
+                        <button id="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-left" id="addData" style="display: none;">
+                <h2>Add your data</h2>
+                <p class="with">for your safety</p>
+                <div class="addData-inputs">
+                    <label for="name" class="label">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <button class="button" id="addData-button">Submit</button>
+            </div>
+        </div>
+        <p id="notice">You should login same provider with when you register.</p>
+    </div>
+    <div class=" bg-circle c1">
+    </div>
+    <div class="bg-circle c2"></div>
+    <div class="bg-circle c3"></div>
+    <script type="module" src="firebase.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

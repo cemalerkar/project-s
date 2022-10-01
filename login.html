@@ -108,6 +108,18 @@
     </div>
     <div class="bg-circle c2"></div>
     <div class="bg-circle c3"></div>
+
+    <script>
+        let i = 0;
+        while (i < 1) {
+            const darkmode = localStorage.getItem("darkmode");
+            if (darkmode === null) {
+                localStorage.setItem("darkmode", "off");
+            }
+            i++;
+        }
+
+    </script>
     <script type="module" src="firebase.js"></script>
     <script src="app.js"></script>
 </body>

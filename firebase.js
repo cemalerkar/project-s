@@ -146,12 +146,13 @@ const navbarLogin = document.getElementById("navbar-register");
 const navbarName = document.getElementById("navbar-name");
 const navbarLogout = document.getElementById("navbar-logout");
 
-if (localStorage.getItem("uid") == "") {
-  console.log("uid none");
+if (localStorage.getItem("uid") == "" || localStorage.getItem("uid") === null) {
   localStorage.setItem("email", "");
   localStorage.setItem("name", "");
-  // TODO: DATABSE EKLE VE KULLANICIYA İSİM FALAN EKLETTİR SONRA İSİM KONTROLÜ YAPTIR BURDA VE İSMİNİ LOGİNREGİSTER YERİNDE
-  // GÖSTER CONTAİNERİ GİZLE EĞER İSMİ YOKSA YENİ İSİM VERMESİNİ İSTEYEN CONTAİNER ÇAĞIR
+  const auth = getAuth();
+  signOut(auth)
+    .then(() => {})
+    .catch((error) => {});
 } else {
   const user = auth.currentUser;
   const userId = localStorage.getItem("uid");

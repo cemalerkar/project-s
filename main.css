@@ -275,6 +275,7 @@ body {
   }
   #navbar-left {
     font-size: 18px;
+    margin-left: 8px;
   }
   .navbar-right {
     font-size: 15px;
@@ -287,6 +288,7 @@ body {
   }
   #navbar-left {
     font-size: 16px;
+    margin-left: 8px;
   }
   .navbar-right {
     font-size: 11px;

@@ -100,7 +100,7 @@ logoutButton.onclick = function () {
   signOut(auth)
     .then(() => {
       localStorage.setItem("uid", "");
-      window.open("/login.html", "_self");
+      window.open("project-s/login.html", "_self");
     })
     .catch((error) => {
       // An error happened.

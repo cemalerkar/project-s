@@ -53,6 +53,11 @@ registerButton.onclick = function () {
 
 const addDataButton = document.getElementById("addData-button");
 addDataButton.onclick = function () {
+  const loading = document.getElementById("load");
+  loading.style.display = "";
+  document.body.style.opacity = "0.4";
+  document.body.style.pointerEvents = "none";
+  loading.style.opacity = "1";
   const dataname = document.querySelector("#name").value;
 
   localStorage.setItem("name", dataname);
@@ -72,11 +77,15 @@ function reload10s() {
 loginButton.onclick = function () {
   const email = document.querySelector("#login-mail").value;
   const password = document.querySelector("#login-pass").value;
+  const loading = document.getElementById("load");
+  loading.style.display = "";
+  document.body.style.opacity = "0.4";
+  document.body.style.pointerEvents = "none";
+  loading.style.opacity = "1";
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      alert("Succesfully Logged In!");
       localStorage.setItem("uid", user.uid);
 
       const db = getDatabase();
@@ -91,19 +100,29 @@ loginButton.onclick = function () {
     })
     .catch((error) => {
       alert(error.code);
+      loading.style.display = "none";
+      document.body.style.opacity = "1";
+      document.body.style.pointerEvents = "";
     });
 };
 
 const logoutButton = document.getElementById("navbar-logout");
 logoutButton.onclick = function () {
+  const loading = document.getElementById("load");
+  loading.style.display = "";
+  document.body.style.opacity = "0.4";
+  document.body.style.pointerEvents = "none";
+  loading.style.opacity = "1";
   const auth = getAuth();
   signOut(auth)
     .then(() => {
       localStorage.setItem("uid", "");
-      window.open("project-s/login.html", "_self");
+      window.open("login.html", "_self");
     })
     .catch((error) => {
-      // An error happened.
+      loading.style.display = "none";
+      document.body.style.opacity = "1";
+      document.body.style.pointerEvents = "";
     });
 };
 

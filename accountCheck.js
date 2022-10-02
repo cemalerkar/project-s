@@ -5,7 +5,7 @@ while (i < 1) {
 
   if (uid === null || name === null) {
   } else if (uid !== "" && name !== "") {
-    window.open("project-s/myAccount.html", "_self");
+    window.open("myAccount.html", "_self");
   }
   i++;
 }

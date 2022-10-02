@@ -163,7 +163,10 @@ if (localStorage.getItem("uid") == "" || localStorage.getItem("uid") === null) {
   adData.style.display = "";
   navbarName.style.display = "";
   navbarLogout.style.display = "";
-  if (localStorage.getItem("name") === "") {
+  if (
+    localStorage.getItem("name") === "" ||
+    localStorage.getItem("name") === null
+  ) {
     navbarName.innerHTML = "Unknown User";
   } else {
     navbarName.innerHTML = localStorage.getItem("name");

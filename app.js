@@ -50,7 +50,7 @@ function loginClick() {
   }
 }
 function logoClick() {
-  window.open("/login.html", "_self");
+  location.reload();
 }
 
 var darkMode = localStorage.getItem("darkmode");

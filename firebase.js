@@ -100,7 +100,7 @@ logoutButton.onclick = function () {
   signOut(auth)
     .then(() => {
       localStorage.setItem("uid", "");
-      location.reload();
+      window.open("/login.html", "_self");
     })
     .catch((error) => {
       // An error happened.
@@ -141,8 +141,8 @@ const Rcontainer = document.getElementById("container");
 const container = document.getElementById("login-ct");
 const notice = document.getElementById("notice");
 const adData = document.getElementById("addData");
-const navbarRegister = document.getElementById("navbar-login");
-const navbarLogin = document.getElementById("navbar-register");
+const navbarRegister = document.getElementById("navr");
+const navbarLogin = document.getElementById("navl");
 const navbarName = document.getElementById("navbar-name");
 const navbarLogout = document.getElementById("navbar-logout");
 
@@ -158,8 +158,8 @@ if (localStorage.getItem("uid") == "" || localStorage.getItem("uid") === null) {
   const userId = localStorage.getItem("uid");
   container.style.display = "none";
   notice.style.display = "none";
-  navbarLogin.style.display = "none";
-  navbarRegister.style.display = "none";
+  navbarLogin.remove();
+  navbarRegister.remove();
   adData.style.display = "";
   navbarName.style.display = "";
   navbarLogout.style.display = "";
